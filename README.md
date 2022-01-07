@@ -1,3 +1,5 @@
 ```
-First Flutter Game in Bonfire
+git status
+git add
+git commit
 ```
