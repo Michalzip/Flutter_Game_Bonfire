@@ -1,4 +1,4 @@
-<p align="center"><b>TRITIO</b></p>
+<h1 align="center">TRITIO</h1>
 
 
 <p align="center">
