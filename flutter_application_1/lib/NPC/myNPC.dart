@@ -22,13 +22,13 @@ runRight:left
 }
 
 
-//mixiny piszemy z with
+
 class NPC extends SimpleEnemy with ObjectCollision 
 {
 
   bool letsTalking=true;
   NPC():super(position:Vector2(540,50),width:30,height:30,animation:Anim()){
-//required Iterable<CollisionArea> wtedy uzywamy [ tutaj bedzie CollisionArea]
+
 setupCollision(
 
 CollisionConfig(collisions:[CollisionArea.rectangle(size: const Size(25,25))])
@@ -90,8 +90,6 @@ seePlayer(
   }
 
 void talkDialog(){
- //gameRef - uzywamy kiedy chcemy dodac cos do naszego intefejus z
- //zawsze  
 
 
  Audio.interactionWithNpc();
@@ -106,14 +104,11 @@ letsTalking=false;
 }
 
 void showEmote(){
-//gameRef - odniesienie do bohatera w skypricektorym piszemy
-//gameRef jest to instancca bonfire a instyancja to wystepowanie objectow takich jak u nas NPC() A npc to nasz NPC
-//instacnja to klasa ktora przechwytuje szczegolne informacje o tej klasie
-//gameRef odnosi sie do interfejsu naszej klasy i dodaje za pomoca .add() to co chcemy do interfejsu naszej postaci np  
+
 String potion = "emote/!.png";
-//dodaj component do interfeju
+
 gameRef.add(
-//animatedfollowerObjecty pozwala na przepisanie animacji do naprzykladi  tak juz animowanego bohatera 
+
 AnimatedFollowerObject(animation:SpriteAnimation.load(potion, SpriteAnimationData.sequenced(amount: 8, stepTime: 0.1, textureSize: Vector2(16,16))),target: this,positionFromTarget: const Rect.fromLTWH(
           18,
           -6,
