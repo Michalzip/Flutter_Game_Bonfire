@@ -14,7 +14,7 @@ class SecondMap extends StatefulWidget {
   _SecondMapState createState() => _SecondMapState();
 }
 
-//import 'package:flame_audio/flame_audio.dart';
+
 class _SecondMapState extends State<SecondMap> 
 {
   
@@ -36,7 +36,7 @@ BonfireTiledWidget(
     forceTileSize: Size(32,32),
   
     objectsBuilder:{
-      //proporties bo bierzemy z tilteda pozycje ktora ustaliismy
+
       'pinkEnemy':(proporties)=>PinkEnemy(proporties.position),
       'Light':(proporties)=>LighttTorch1(proporties.position),
       "torch":(proporties)=>LighttTorch2(proporties.position),
