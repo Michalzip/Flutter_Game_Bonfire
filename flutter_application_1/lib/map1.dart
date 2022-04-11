@@ -51,7 +51,7 @@ Audio.backgroundMusicPlay();
        p.position,
        p.size.width,
        p.size.height,
-       //zmien na NextMap
+       //NextMap
        (v)=>{exitMap(v,context)}
       
     
