@@ -8,18 +8,8 @@ import 'ui_hero.dart';
 
 class InterFaceInGame extends GameInterface
 {
-  onLoad() 
-  
-  {
-
-  add(HealthBar());
- 
-
- 
-
+ onLoad(){
+ add(HealthBar());
 super.onLoad();
   }
-
-
-  
 }
