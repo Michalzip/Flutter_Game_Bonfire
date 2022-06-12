@@ -3,9 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
 import 'util/sound.dart';
-
 import 'configPlayer.dart';
-
 import 'endWidget.dart';
 import 'map1.dart';
 class MyPlayer extends SimplePlayer with ObjectCollision,Lighting{
@@ -16,24 +14,17 @@ MyPlayer(Vector2 position):super(
   width: 40,
   height: 40,
   life: 100,
-  
   speed:150
-  
   
   ){
 
 setupLighting(LightingConfig(radius: width * 0.7 , color:  Colors.transparent));
-setupCollision(
+setupCollision (
 
 CollisionConfig(collisions:[CollisionArea.rectangle(size: const Size(30,39))])
 
 );
-
-
-
-
-  
-  }
+}
 
  @override
   void joystickAction(JoystickActionEvent event){
@@ -43,12 +34,10 @@ CollisionConfig(collisions:[CollisionArea.rectangle(size: const Size(30,39))])
 
       execAtack();
     }
-
   }
 
-
   void execAtack(){
-
+    
 Audio.meleAtackPlayer();
     simpleAttackMelee
     (
@@ -72,13 +61,9 @@ Audio.meleAtackPlayer();
 
 
 void receiveDamage(double damage, dynamic from) {
-
-
 showDamage(damage,config:TextStyle(color:Colors.red[800]));
 super.receiveDamage(damage, from);
   }
-
-  
 
   void die(){
 removeFromParent();
@@ -94,9 +79,7 @@ DeadWidget.showGameOver(context, () {
           MaterialPageRoute(builder: (context) => Game()),
           (Route<dynamic> route) => false,
         ); });
-
  }
- 
 super.die();
 
   }
