@@ -4,49 +4,31 @@ import 'package:flutter/widgets.dart';
 
 class NextMap extends GameDecoration with Sensor
 {
-  
-
+ 
   final String id;
   bool hasContact = false;
-
   final ValueChanged<String> exitMap;
-  
    static Future<Sprite> potion =  Sprite.load('c.png',
                   srcPosition: Vector2(0, 0),
                   srcSize: Vector2(0,0)
                );
-NextMap
-
-(
-
-  
+NextMap(
    this.id,Vector2 position, double width, double height, this.exitMap
-)
-
-      : super.withSprite(
+): super.withSprite(
            NextMap.potion,//we dont need that
           position: position,
           width: width,
           height: height,
         );
 
-
-   
-   
    @override
-
     void onContact(GameComponent component) {
    
      if(!hasContact && component is Player){
- 
       hasContact=true;
-  
       exitMap(id);
-
      }
-
     }
-
 }
 
 extension BuildContextExtensions on BuildContext {
