@@ -16,13 +16,9 @@ static Future<SpriteAnimation> fightRight=SpriteAnimation.load("Boss/fightRight.
 static Future<SpriteAnimation> fightLeft=SpriteAnimation.load("Boss/fightLeft.png",SpriteAnimationData.sequenced(amount: 2, stepTime: 0.2, textureSize: Vector2(46,46)));
 static Future<SpriteAnimation> fightTop=SpriteAnimation.load("Boss/fightTop.png",SpriteAnimationData.sequenced(amount: 2, stepTime: 0.2, textureSize: Vector2(46,46)));
 static Future<SpriteAnimation> fightBottom=SpriteAnimation.load("Boss/fightBottom.png",SpriteAnimationData.sequenced(amount: 2, stepTime: 0.2, textureSize: Vector2(46,46)));
-
-
 }
 
-
 class Movment_Old_Man extends SimpleDirectionAnimation {
-
 Movment_Old_Man():super
 (
 
@@ -30,10 +26,7 @@ idleLeft:Old_man_animations.idleLeft,
 runLeft:Old_man_animations.idleRight,
 idleRight:Old_man_animations.idleRight,
 runRight:Old_man_animations.runRight,
-
-
 );
-
 }
 
 class Old_man extends SimpleEnemy with AutomaticRandomMovement,ObjectCollision
@@ -48,30 +41,21 @@ life:100,
 height:60,
 animation:Movment_Old_Man(),
   ){
-
-
-    setupCollision
+      setupCollision
 (
   CollisionConfig(collisions: [CollisionArea.rectangle(size: const Size(30,36))])
 );
   }
-
 @override
 
 void render(Canvas canvas)
 {
-
-
 drawDefaultLifeBar(
       canvas,
       borderRadius: BorderRadius.circular(2),
     );
 
-
-//void drawDefaultLifeBar(canvas.drawLine(Offset(20,20), Offset(20,20), Paint()));
-
 super.render(canvas);
-
 }
 @override
 
@@ -110,12 +94,7 @@ seePlayer(
       );
 }
   super.update(dt);
-
-
-
-
 }
-
 
 void atackRange(){
 
@@ -163,17 +142,13 @@ showDamage(damage,config:TextStyle(color:Colors.redAccent,fontSize:25));
 super.receiveDamage(damage,from);
  
 }
-
-
     @override
     void die() {
     removeFromParent();
  
 gameRef.add(
-  
-
  AnimatedObjectOnce(position:position,animation:SpriteAnimation.load("Boss/enemyDead.png",SpriteAnimationData.sequenced(amount: 3, stepTime: 0.2, textureSize: Vector2(46,46))))
-
+    
 );
 Audio.deathEnemySound();
 
