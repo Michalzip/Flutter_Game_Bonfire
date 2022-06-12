@@ -28,10 +28,7 @@ CollisionConfig(collisions:[CollisionArea.rectangle(size: const Size(30,39))])
 
  @override
   void joystickAction(JoystickActionEvent event){
-
-
     if(event.event==ActionEvent.DOWN){
-
       execAtack();
     }
   }
